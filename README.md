@@ -147,5 +147,23 @@ I also learnt about the `-R` flag whcih recursively changes ownership. When chan
 <details>
 <summary><b>Week 2: Bash Scripting</b></summary><p>
 
+[My Notes](https://github.com/deserie-dev/Bash-Scripting)
+
+I created a bash script to automate the creation of users. In week 1, we had to create 15 users one by one. The bash script createUsers.sh makes use of a for loop in order to automate the process of creating users.
+
 </p></details>
-```
+
+<details>
+<summary><b>Week 3: Virtualization and Containerization</b></summary><p>
+
+---
+
+#### Resources Used:
+
+- [IBM Docs on Virtualization](https://www.ibm.com/cloud/learn/virtualization-a-complete-guide)
+
+- [IBM Docs on Containerization](https://www.ibm.com/cloud/learn/containerization)
+
+---
+
+</p></details>
