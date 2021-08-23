@@ -149,7 +149,17 @@ I also learnt about the `-R` flag whcih recursively changes ownership. When chan
 
 [My Notes](https://github.com/deserie-dev/Bash-Scripting)
 
-I created a bash script to automate the creation of users. In week 1, we had to create 15 users one by one. The bash script createUsers.sh makes use of a for loop in order to automate the process of creating users.
+I created a bash script to automate the creation of users. In week 1, we had to create 15 users one by one. The bash script createusers.sh makes use of a for loop in order to automate the process of creating users.
+
+1. Create a text file containing the 15 usernames to be created (usernames.txt)
+
+2. Write the bash script to automate the creation of users (createusers.sh)
+
+3. Make the bash script executable by running
+
+```
+chmod u+x createusers.sh
+```
 
 </p></details>
 
