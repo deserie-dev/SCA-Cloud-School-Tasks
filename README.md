@@ -166,6 +166,55 @@ chmod u+x createusers.sh
 <details>
 <summary><b>Week 3: Virtualization and Containerization</b></summary><p>
 
+Repo with files for this weeks task: [deseriedocker1](https://github.com/deserie-dev/deseriedocker1)
+
+**Pre-requisites**
+Download and install Docker. I am on a Windows machine running Windows home. I used the following guide to help me: [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10). Once I had done that I was able to download [Docker Desktop for Windows](https://docs.docker.com/desktop/windows/install/#system-requirements-for-wsl-2-backend).
+
+**TASK 1: Write a Dockerfile (for any sample application), build an image from it, and then launch a container from that image.**
+
+I made a simple application with HTML & CSS on the front end and Node on the back end.
+![](/images/myapp.gif)
+
+I wrote the Dockerfile in the project's root folder.
+![](/images/dockerfile.png)
+
+A Dockerfile is a list of instructions that Docker uses to build an image. An image is used to build a container. **FROM** specifies the parent image from which I'm building, in this case Node:10. Official versions of images can be found on Docker Hub. **WORKDIR** sets the working directory for all the commands that follow it, so it's like a cd into that directory. I used an absolute path to my deseriedocker1 file. **COPY** copies files from my working directory onto the current working directory in the image. **RUN** will install the projects dependencies, the same as if I was running a normal Node app, I would run "npm install" to install all my projects dependencies. **EXPOSE** opens a network port so that I can reach my Node app inside the container. **CMD** is the commands that are run when the container starts up.
+
+To build the image, I cd'd into the folder with the Dockerfile and ran
+
+```
+  docker build -t my-app:1.0 .
+```
+
+![](/images/dockerbuild.png)
+
+![](/images/dockerimage.png)
+
+To launch a container from the image I ran
+
+```
+  docker run my-app:1.0
+```
+
+![](/images/dockerrun.png)
+
+![](/images/myappcontainer.png)
+
+**TASK 2: Write a docker-compose file for the same application, then build and run the application.**
+
+I wrote the docker-compose file in my project's root folder. Docker Compose is a tool for running multiple containers although in this case I only have one. Docker compose is a YAML file used to configure an app's services. **Version** specifies the version of Docker Compose. **my-app** is the container name and **image** tells Docker Compose to deploy my container using the official Node image. **ports** specifies which ports are going to be open, the first one is the port on the host, the second one is the port on the container.
+
+![](/images/dockercompose.png)
+
+I then ran
+
+```
+  docker-compose up
+```
+
+![](/images/composeup.png)
+
 ---
 
 #### Resources Used:
