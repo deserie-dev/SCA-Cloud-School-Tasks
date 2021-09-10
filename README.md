@@ -143,7 +143,6 @@ I also learnt about the `-R` flag whcih recursively changes ownership. When chan
 ---
 
 </p></details>
-
 <details>
 <summary><b>Week 2: Bash Scripting</b></summary><p>
 
@@ -224,5 +223,69 @@ I then ran
 - [IBM Docs on Containerization](https://www.ibm.com/cloud/learn/containerization)
 
 ---
+
+</p></details>
+
+<details>
+<summary><b>Week 4: Web Servers</b></summary><p>
+
+</p></details>
+
+<details>
+<summary><b>Week 5: The Cloud & CI/CD Tools</b></summary><p>
+
+**TASK 1: Find a project that has a database dependency and deploy to Heroku(PAAS)**
+
+**TASK 2: Set up a Jenkins server**
+
+### Pre-requisites
+
+Before installing Jenkins you have to first install Java 11 or 8. I spun up an AWS EC2 instance running Ubuntu 20 and downloaded a new key pair which I named jenkins.pem. In order to ssh into my instance I ran
+
+```
+  ssh -i jenkins.pem ubuntu@myEC2ipaddress
+```
+
+![](/images/ec2.png)
+
+To install Java on my instance I ran
+
+```
+  sudo apt install openjdk-11-jre-headless
+```
+
+![](/images/java.png)
+
+To install Jenkins I ran the following commands
+
+```
+  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+  sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \/etc/apt/sources.list.d/jenkins.list'
+  sudo apt-get update
+  sudo apt-get install jenkins
+```
+
+To start up the Jenkins server I ran
+
+```
+  sudo systemctl start jenkins
+  sudo systemctl status jenkins
+```
+
+![](/images/jenkins_start.png)
+
+**TASK 3: Create a simple pipeline that runs the provided tests in a codebase**
+
+Inside Jenkins I created a freestyle project. On the config page, I entered my repo's URL. For Source Code Management I selected Git. In the Build Triggers section I selected GitHub hook trigger for GITScm polling option, then save.
+
+![](/images/jbuild.png)
+
+**TASK 4: Add a hook that automatically triggers the pipeline build when a new code is pushed to any branch**
+
+In my GitHub repo I went to Settings -> Webhooks -> Add Webhook. In the Payload URL field, I entered my Jenkins url with /github-webhook/ appended to it. For Content Type I selected json, and for the event trigger I selected the push event.
+
+![](/images/webhook.png)
+
+**TASK 5: Repeat the above instructions for CircleCI and TravisCI**
 
 </p></details>
