@@ -236,6 +236,14 @@ I then ran
 
 **TASK 1: Find a project that has a database dependency and deploy to Heroku(PAAS)**
 
+Deployment on Heroku
+
+![](/images/heroku.png)
+
+Live link
+
+[Weather App](https://deserie-weather-application.herokuapp.com/)
+
 **TASK 2: Set up a Jenkins server**
 
 ### Pre-requisites
@@ -287,5 +295,17 @@ In my GitHub repo I went to Settings -> Webhooks -> Add Webhook. In the Payload 
 ![](/images/webhook.png)
 
 **TASK 5: Repeat the above instructions for CircleCI and TravisCI**
+
+Repo with sample app and all config files
+
+[Sample App](https://github.com/deserie-dev/jenkins_test)
+
+**Circle CI**
+
+![](/images/circle.png)
+
+**Travis CI**
+
+![](/images/travis.png)
 
 </p></details>
