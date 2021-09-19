@@ -309,3 +309,40 @@ Repo with sample app and all config files
 ![](/images/travis.png)
 
 </p></details>
+
+<details>
+<summary><b>Week 6: Networking On The Cloud</b></summary><p>
+
+**TASK 1: Create a VPC with private and public subnet**
+
+![](/images/vpc1.png)
+
+![](/images/subnet.png)
+
+**TASK 2: Create instances (servers) in each subnet**
+
+Public instance with a public IP address.
+
+![](/images/publicInstance.png)
+
+Private instance with no public IP address.
+
+![](/images/privateInstance.png)
+
+The instance that is in the public subnet has a public IP address as shown above, and can connect to the internet, but the instance in the private subnet cannot, unless it uses a network address translation (NAT) gateway.
+
+**TASK 4: Write a bash script to automate the creation of the VPC, subnets and servers**
+
+See createvpc.sh
+
+---
+
+#### Resources Used:
+
+- [AWS - Create a VPC with Public and Private Subnets](https://jasonwatmore.com/post/2021/05/30/aws-create-a-vpc-with-public-and-private-subnets-and-a-nat-gateway)
+
+- [AWS CLI Basics](https://okigiveup.net/tutorials/discovering-aws-with-cli-part-1-basics/)
+
+---
+
+</p></details>
