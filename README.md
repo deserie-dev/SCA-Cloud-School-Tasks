@@ -329,6 +329,14 @@ Private instance with no public IP address.
 
 ![](/images/privateInstance.png)
 
+SSH into instance after configuring the .pem file by using command provided in console or "ssh ubuntu@IPADDRESS" or "ssh ec2-user@IPADDRESS"
+
+![](/images/ssh1.png)
+
+![](/images/ssh2.png)
+
+![](/images/ssh3.png)
+
 The instance that is in the public subnet has a public IP address as shown above, and can connect to the internet, but the instance in the private subnet cannot, unless it uses a network address translation (NAT) gateway.
 
 **TASK 4: Write a bash script to automate the creation of the VPC, subnets and servers**
@@ -342,6 +350,25 @@ See createvpc.sh
 - [AWS - Create a VPC with Public and Private Subnets](https://jasonwatmore.com/post/2021/05/30/aws-create-a-vpc-with-public-and-private-subnets-and-a-nat-gateway)
 
 - [AWS CLI Basics](https://okigiveup.net/tutorials/discovering-aws-with-cli-part-1-basics/)
+
+- [SSH Into EC2 Instance](https://youtu.be/N9t2RzmHta8)
+
+---
+
+</p></details>
+
+<details>
+<summary><b>Week 7: Infrastructure Provisioning & Configuration Management</b></summary><p>
+
+---
+
+#### Resources Used:
+
+- [Packer YouTube Playlist](https://www.youtube.com/watch?v=ArwJqy6meyA&list=PL0yQYCnvTmOvEcVj7NQ6wH2nxmeA6w2ve)
+
+- [Ansible YouTube Playlist](https://youtu.be/3RiVKs8GHYQ)
+
+- [Getting Started with Ansible](https://blog.risingstack.com/getting-started-with-ansible-infrastructure-automation/)
 
 ---
 
