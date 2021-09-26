@@ -360,6 +360,9 @@ See createvpc.sh
 <details>
 <summary><b>Week 7: Infrastructure Provisioning & Configuration Management</b></summary><p>
 
+[Repo for Packer](https://github.com/deserie-dev/HashiCorp-Packer-Practice)
+[Repo for Terraform](https://github.com/deserie-dev/HashiCorp-Terraform-Practice)
+
 ---
 
 #### Resources Used:
