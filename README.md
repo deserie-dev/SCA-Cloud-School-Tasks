@@ -229,6 +229,65 @@ I then ran
 <details>
 <summary><b>Week 4: Web Servers</b></summary><p>
 
+I will take you through the process I went through to use Nginx as a reverse proxy server for an application I'm building that uses Node.js on the backend, as well as the setting up a free SSL certificate through Let's Encrypt.
+
+I ran the following commands in order to install Nginx on my running GCP instance, and configure NGINX to listen to requests on port 80 and redirect them to port 3000 where Node.js is running.
+
+To install Nginx:
+
+```
+sudo apt update
+sudo apt install nginx
+```
+
+To install a firewall:
+
+```
+sudo ufw allow 'Nginx Full'
+sudo ufw allow OpenSSH
+sudo ufw enable
+```
+
+To launch Nginx:
+
+```
+sudo systemctl start nginx
+```
+
+![](/images/nginx.png)
+
+To make Nginx redirect requests, I had to edit its configuration file:
+
+```
+sudo nano /etc/nginx/sites-available/default
+```
+
+I deleted the contents of the above file and replaced it with the following configuration
+
+```
+server {
+  listen 80;
+
+  server_name deserie.students.nomoreparties.site www.deserie.students.nomoreparties.site;
+
+  location / {
+    proxy_pass http://localhost:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+  }
+}
+```
+
+Once the config file was updated, I restarted Nginx:
+
+```
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
 </p></details>
 
 <details>
