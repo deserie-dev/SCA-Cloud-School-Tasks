@@ -288,6 +288,22 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
+I installed a Lets Encrypt's SSL certificate by using Certbot. The process of issuing a certificate and configuring Nginx to use it is explained on the [Certbot website](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx).
+
+To connect the issued certificate, I ran the following command and entered the appropriate responses to the prompts
+
+```
+sudo certbot --nginx
+```
+
+After doing this I had to restart Nginx
+
+```
+sudo systemctl restart nginx
+```
+
+![](/images/ssl.png)
+
 </p></details>
 
 <details>
